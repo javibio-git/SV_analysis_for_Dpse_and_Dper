@@ -37,6 +37,26 @@ Commands:
 
 > `java -Xmx30G -jar pilon-1.22.jar --genome pbjelly.fasta --frags pbjelly_mapped_sorted.bam --threads 5 --changes 2> stderror_pilon.txt`
 
+## Step 2.
+Generation of a hybrid assembly using CLR reads and Illumina paired-end reads using [DBG2OLC](https://github.com/yechengxi/DBG2OLC).
+
+Commands:
+
+> `SparseAssembler LD 0 k 51 g 15 NodeCovTh 1 EdgeCovTh 0 GS 171281433 i1 file_1.fastq o1 file_2.fastq > sparseAssembler_test1.log`
+
+> `SparseAssembler LD 1 k 51 g 15 NodeCovTh 2 EdgeCovTh 1 GS 171281433 i1 st_1.fastq o1 st_2.fastq > sparseAssembler_test1.log`
+
+> `DBG2OLC k 17 KmerCovTh 2 MinOverlap 20 AdaptiveTh 0.002 LD1 0 MinLen 200 Contigs Contigs.txt RemoveChimera 1 f pacbio.fasta`
+
+## Step 3.
+Final scaffolding step using [quickmerge](https://github.com/mahulchak/quickmerge)
+
+Commands:
+
+>`nucmer -l 100 -p out -t 10 pacbiopolished.fasta hybrid.fasta 2> stderror_nucmer.txt`
+
+> `delta-filter -i 95 -r -q out.delta > out.rq.delta 2> stderror_deltafilter.txt`
+
+> `quickmerge -d out.rq.delta -q hybrid.fasta -r pacbiopolished.fasta -hco 5.0 -c 1.5 -l n -ml m 2> stderror_quickmerge.txt`
 
 
-## Step 2. 
