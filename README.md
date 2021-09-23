@@ -1,5 +1,5 @@
 # Genome assembly pipeline for *Drosophila pseudoobscura* (ST) and *Drosophila persimilis* (M40) - Extended methods.
-This is a genome assembly pipeline used (from paper) for the *D. pseudoobscura* (ST) and *D. persimilis* (M40).
+This section shows the genome assembly pipeline used (from paper) for the *D. pseudoobscura* (ST) and *D. persimilis* (M40).
 This pipeline implements a hybrid assembly using Illumina short reads and PacBio CLR reads.
 
 ## Step 1
@@ -58,5 +58,8 @@ Commands:
 > `delta-filter -i 95 -r -q out.delta > out.rq.delta 2> stderror_deltafilter.txt`
 
 > `quickmerge -d out.rq.delta -q hybrid.fasta -r pacbiopolished.fasta -hco 5.0 -c 1.5 -l n -ml m 2> stderror_quickmerge.txt`
+
+# Structural variation analysis.
+This section shows the followed approach for the structural variation analysis that includes INDEL and CNV calling using CLR reads and whole genome alignments. 
 
 
