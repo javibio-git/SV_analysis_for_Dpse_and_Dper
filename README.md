@@ -3,7 +3,7 @@ This is a genome assembly pipeline used (from paper) for the *D. pseudoobscura* 
 This pipeline implements a hybrid assembly using Illumina short reads and PacBio CLR reads.
 
 ## Step 1
-Generation of a PacBio-only, gap-filled and polished assembly: this assembly was construted directly by Pacific Biosciences using HGAP-Arrow with default parameters (please refer to the [HGAP github page](https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/HGAP) for details). The assembly statistics for each species are available at the Supplementary_Figures_Tables.pdf file (Table S13).
+Generation of a PacBio-only, gap-filled and polished assembly: this assembly was construted directly by Pacific Biosciences using HGAP-Arrow with default parameters (please refer to the [HGAP github page](https://github.com/PacificBiosciences/Bioinformatics-Training/wiki/HGAP) for details). The assembly statistics for each species are available at the Supplementary_Tables.xlsx file (Table S13).
 
 ### Step 1.1
 - Gap-filling of the PacBio-only assemblies using [PbJelly](https://sourceforge.net/projects/pb-jelly/files/).
