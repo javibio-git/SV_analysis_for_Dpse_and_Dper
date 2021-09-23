@@ -1,4 +1,4 @@
-# Genome assembly pipeline for *Drosophila pseudoobscura* (ST) and *Drosophila persimilis* (M40) - Extended methods.
+# Genome assembly and SV analysis pipelines for *Drosophila pseudoobscura* (ST) and *Drosophila persimilis* (M40) - Extended methods.
 This section shows the genome assembly pipeline used (from paper) for the *D. pseudoobscura* (ST) and *D. persimilis* (M40).
 This pipeline implements a hybrid assembly using Illumina short reads and PacBio CLR reads.
 
@@ -60,6 +60,21 @@ Commands:
 > `quickmerge -d out.rq.delta -q hybrid.fasta -r pacbiopolished.fasta -hco 5.0 -c 1.5 -l n -ml m 2> stderror_quickmerge.txt`
 
 # Structural variation analysis.
-This section shows the followed approach for the structural variation analysis that includes INDEL and CNV calling using CLR reads and whole genome alignments. 
+This section shows the followed approach for the structural variation analysis that includes INDEL and CNV calling using CLR reads and whole genome alignments.
+
+## Step 1.
+SV calling using [svim](https://github.com/eldariont/svim). Pipeline is contained in the SVcalling_reciprocalvalidation_CLRreads.sh file.
+
+## Step 2. 
+SV calling using [svmu](https://github.com/mahulchak/svmu). svmu commands used for all species pair-wise comparisons.
+
+> `nucmer -t 10 --maxmatch --preferenceix=file.mm reference_genome.fasta query_genome.fasta`
+
+> `lastz reference_genome.fasta[multiple] query_genome.fastaa[multiple] --chain --format=general:name1,strand1,start1,end1,name2,strand2,start2,end2 > file_lastz.txt`
+
+> `svmu file.mm.delta reference_genome.fasta query_genome.fasta 5 l file_lastz.txt file-svmu`
+
+## Step 3.
+SV polarization of *D. pseudoobscura* and *D. persimilis* variants with *D. miranda*. Overall approach and scripts are available at the SV folder. 
 
 
