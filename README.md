@@ -86,6 +86,7 @@ Command:
 
 > `python3 syri -c out.sam -r refgenome -q qrygenome -k -F S`
 
+# Genome annotation post-processing.
 
-
+Please refer to the genomeAnnotation_postprocessing.sh for the complete pipeline. 
 
