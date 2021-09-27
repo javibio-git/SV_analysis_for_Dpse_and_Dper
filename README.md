@@ -21,7 +21,7 @@ Commands:
 > NOTE: Please refere to the jellyProtocol.xml for full parameter details.
 
 ### Step 1.2
-- Polishin using [Pilon](https://github.com/broadinstitute/pilon/releases/tag/v1.22)
+- Polishing using [Pilon](https://github.com/broadinstitute/pilon/releases/tag/v1.22)
 
 Commands:
 
