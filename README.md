@@ -78,7 +78,7 @@ SV calling using [svmu](https://github.com/mahulchak/svmu). svmu commands used f
 SV polarization of *D. pseudoobscura* and *D. persimilis* variants with *D. miranda*. Overall approach and scripts are available at the SV folder. 
 
 ## Syri SV calling.
-SV calling using (syri)[https://github.com/schneebergerlab/syri] for each species pair.
+SV calling using [syri](https://github.com/schneebergerlab/syri) for each species pair.
 
 Command:
 
