@@ -1,0 +1,8 @@
+<jellyProtocol>
+    <reference>/path/to/assembly.fasta</reference>
+    <outputDir>/path/to/outdir/</outputDir>
+    <blasr>--minMatch 8 --sdpTupleSize 8 --minPctSimilarity 75 --bestn 1 --nCandidates 10 --maxScore -500 --nproc 15 --noSplitSubreads</blasr>
+    <input baseDir="/path/to/desired/location">
+        <job>CLR_reads.fasta</job>
+    </input>
+</jellyProtocol>
